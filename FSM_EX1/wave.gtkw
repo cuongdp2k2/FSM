@@ -1,0 +1,26 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Tue Oct 31 13:18:23 2023
+[*]
+[dumpfile] "/home/dpcuong/FSM/FSM_EX1/wave.fst"
+[dumpfile_mtime] "Tue Oct 31 13:17:13 2023"
+[dumpfile_size] 676
+[savefile] "/home/dpcuong/FSM/FSM_EX1/wave.gtkw"
+[timestart] 44
+[size] 958 956
+[pos] 32813 32946
+*-4.000000 90 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 42
+[signals_width] 146
+[sst_expanded] 0
+[sst_vpaned_height] 261
+@28
+TOP.clk_i
+TOP.res_ni
+TOP.w_i
+@29
+TOP.z_o
+@28
+TOP.Stage_o[8:0]
+[pattern_trace] 1
+[pattern_trace] 0
