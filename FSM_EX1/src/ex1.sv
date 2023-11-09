@@ -1,16 +1,16 @@
 
-module ex1  #(
-    parameter  _A =  9'b000000001 ,
-    parameter  _B =  9'b000000010 ,
-    parameter  _C =  9'b000000100 ,
-    parameter  _D =  9'b000001000 ,
-    parameter  _E =  9'b000010000 ,
-    parameter  _F =  9'b000100000 ,
-    parameter  _G =  9'b001000000 ,
-    parameter  _H =  9'b010000000 ,
-    parameter  _I =  9'b100000000 
+ module ex1  /*/#(
+//     parameter  _A =  9'b000000001 ,
+//     parameter  _B =  9'b000000010 ,
+//     parameter  _C =  9'b000000100 ,
+//     parameter  _D =  9'b000001000 ,
+//     parameter  _E =  9'b000010000 ,
+//     parameter  _F =  9'b000100000 ,
+//     parameter  _G =  9'b001000000 ,
+//     parameter  _H =  9'b010000000 ,
+//     parameter  _I =  9'b100000000 
     
-) (
+ ) */(
     // input
     input logic clk_i ,
     input logic w_i   ,
@@ -21,20 +21,21 @@ module ex1  #(
     output reg [8:0] Stage_o 
 );
         
-    // typedef enum { 
-    //     _A <=  9'b000000001 ,
-    //     _B <=  9'b000000010 ,
-    //     _C <=  9'b000000100 ,
-    //     _D <=  9'b000001000 ,
-    //     _E <=  9'b000010000 ,
-    //     _F <=  9'b000100000 ,
-    //     _G <=  9'b001000000 ,
-    //     _H <=  9'b010000000 ,
-    //     _I <=  9'b100000000 
-    // } StageType;
+    typedef enum logic [8:0] { 
+        _A =  9'b000000001 ,
+        _B =  9'b000000010 ,
+        _C =  9'b000000100 ,
+        _D =  9'b000001000 ,
+        _E =  9'b000010000 ,
+        _F =  9'b000100000 ,
+        _G =  9'b001000000 ,
+        _H =  9'b010000000 ,
+        _I =  9'b100000000 
+    } StageType;
 
-    logic [8:0] Stage_wire ;
+    //logic [8:0] Stage_wire ;
     //logic       z_wire     ;
+    StageType Stage_wire ;
 
     always_comb begin
         if(!res_ni) begin

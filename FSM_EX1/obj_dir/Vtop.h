@@ -25,14 +25,14 @@ VL_MODULE(Vtop) {
     // The application code writes and reads these signals to
     // propagate new values into/out from the Verilated model.
     VL_IN8(clk_i,0,0);
-    VL_IN8(w_i,0,0);
+    VL_IN8(w,0,0);
     VL_IN8(res_ni,0,0);
     VL_OUT8(z_o,0,0);
-    VL_OUT16(Stage_o,8,0);
+    VL_OUT8(State_o,3,0);
     
     // LOCAL SIGNALS
     // Internals; generally not touched by application code
-    SData/*8:0*/ top__DOT__dut__DOT__Stage_wire;
+    CData/*3:0*/ top__DOT__dut__DOT__State_wire;
     
     // LOCAL VARIABLES
     // Internals; generally not touched by application code
@@ -86,7 +86,7 @@ VL_MODULE(Vtop) {
     static void _eval_initial(Vtop__Syms* __restrict vlSymsp) VL_ATTR_COLD;
     static void _eval_settle(Vtop__Syms* __restrict vlSymsp) VL_ATTR_COLD;
     static void _sequent__TOP__1(Vtop__Syms* __restrict vlSymsp);
-    static void _settle__TOP__2(Vtop__Syms* __restrict vlSymsp);
+    static void _settle__TOP__2(Vtop__Syms* __restrict vlSymsp) VL_ATTR_COLD;
   private:
     static void traceChgSub0(void* userp, VerilatedFst* tracep);
     static void traceChgTop0(void* userp, VerilatedFst* tracep);

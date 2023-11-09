@@ -23,11 +23,10 @@ void Vtop::traceChgSub0(void* userp, VerilatedFst* tracep) {
     // Body
     {
         tracep->chgBit(oldp+0,(vlTOPp->clk_i));
-        tracep->chgBit(oldp+1,(vlTOPp->w_i));
+        tracep->chgBit(oldp+1,(vlTOPp->w));
         tracep->chgBit(oldp+2,(vlTOPp->res_ni));
         tracep->chgBit(oldp+3,(vlTOPp->z_o));
-        tracep->chgSData(oldp+4,(vlTOPp->Stage_o),9);
-        tracep->chgSData(oldp+5,(vlTOPp->top__DOT__dut__DOT__Stage_wire),9);
+        tracep->chgCData(oldp+4,(vlTOPp->State_o),4);
     }
 }
 
