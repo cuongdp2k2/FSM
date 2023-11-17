@@ -70,108 +70,113 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__1(Vtop__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop::_sequent__TOP__1\n"); );
     Vtop* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    if ((1U & (~ (IData)(vlTOPp->res_ni)))) {
-        vlTOPp->z_o = 0U;
-    }
-    if (vlTOPp->res_ni) {
-        vlTOPp->State_o = ((7U & (IData)(vlTOPp->State_o)) 
-                           | (0xfffffff8U & ((((((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                                 << 1U) 
-                                                & ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                                   << 2U)) 
-                                               & ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                                  << 3U)) 
-                                              | (IData)(vlTOPp->top__DOT__dut__DOT__State_wire)) 
-                                             & ((IData)(vlTOPp->w) 
-                                                << 3U))));
-        vlTOPp->State_o = ((0xbU & (IData)(vlTOPp->State_o)) 
-                           | (4U & (((0xfffffffcU & 
-                                      (((((~ ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                              >> 2U)) 
-                                          << 2U) & 
-                                         ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                          << 1U)) & 
-                                        ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                         << 2U)) | 
-                                       (((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                         & ((~ ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                                >> 1U)) 
-                                            << 2U)) 
-                                        & ((~ (IData)(vlTOPp->top__DOT__dut__DOT__State_wire)) 
-                                           << 2U)))) 
-                                     | ((((~ ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                              >> 3U)) 
-                                          & (~ ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                                >> 1U))) 
-                                         & (IData)(vlTOPp->w)) 
-                                        << 2U)) | (
-                                                   (((~ 
-                                                      ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                                       >> 3U)) 
-                                                     & (~ (IData)(vlTOPp->top__DOT__dut__DOT__State_wire))) 
-                                                    & (IData)(vlTOPp->w)) 
-                                                   << 2U))));
-        vlTOPp->State_o = ((0xdU & (IData)(vlTOPp->State_o)) 
-                           | (2U & ((((((((~ ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                              >> 2U)) 
-                                          & (~ ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                                >> 1U))) 
-                                         & (IData)(vlTOPp->top__DOT__dut__DOT__State_wire)) 
-                                        & (~ (IData)(vlTOPp->w))) 
-                                       << 1U) | (0xfffffffeU 
-                                                 & (((((~ 
-                                                        ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
+    if (vlTOPp->_KEY1) {
+        vlTOPp->top__DOT__dut__DOT___L = ((3U & (IData)(vlTOPp->top__DOT__dut__DOT___L)) 
+                                          | (4U & (
+                                                   ((((~ 
+                                                       ((IData)(vlTOPp->SW_i) 
+                                                        >> 1U)) 
+                                                      & (IData)(vlTOPp->SW_i)) 
+                                                     << 2U) 
+                                                    | (0xfffffffcU 
+                                                       & ((((~ 
+                                                             ((IData)(vlTOPp->SW_i) 
+                                                              >> 2U)) 
+                                                            << 2U) 
+                                                           & ((IData)(vlTOPp->SW_i) 
+                                                              << 1U)) 
+                                                          & ((~ (IData)(vlTOPp->SW_i)) 
+                                                             << 2U)))) 
+                                                   | (0xfffffffcU 
+                                                      & ((IData)(vlTOPp->SW_i) 
+                                                         & ((IData)(vlTOPp->SW_i) 
+                                                            << 2U))))));
+        vlTOPp->top__DOT__dut__DOT___L = ((5U & (IData)(vlTOPp->top__DOT__dut__DOT___L)) 
+                                          | (2U & (
+                                                   (((((~ 
+                                                        ((IData)(vlTOPp->SW_i) 
                                                          >> 2U)) 
-                                                       << 1U) 
-                                                      & (IData)(vlTOPp->top__DOT__dut__DOT__State_wire)) 
-                                                     & ((~ (IData)(vlTOPp->top__DOT__dut__DOT__State_wire)) 
-                                                        << 1U)) 
-                                                    & ((~ (IData)(vlTOPp->w)) 
-                                                       << 1U)))) 
-                                     | (0x7ffffffeU 
-                                        & (((((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                              >> 1U) 
-                                             & ((~ 
-                                                 ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                                  >> 1U)) 
-                                                << 1U)) 
-                                            & ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                               << 1U)) 
-                                           & ((IData)(vlTOPp->w) 
-                                              << 1U)))) 
-                                    | (0x7ffffffeU 
-                                       & (((((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                             >> 1U) 
-                                            & (IData)(vlTOPp->top__DOT__dut__DOT__State_wire)) 
-                                           & ((~ (IData)(vlTOPp->top__DOT__dut__DOT__State_wire)) 
-                                              << 1U)) 
-                                          & ((IData)(vlTOPp->w) 
-                                             << 1U))))));
-        vlTOPp->State_o = ((0xeU & (IData)(vlTOPp->State_o)) 
-                           | (1U & ((((((((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                          >> 2U) & (IData)(vlTOPp->top__DOT__dut__DOT__State_wire)) 
-                                        & (~ (IData)(vlTOPp->w))) 
-                                       | (((~ ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                               >> 2U)) 
-                                           & (~ (IData)(vlTOPp->top__DOT__dut__DOT__State_wire))) 
-                                          & (~ (IData)(vlTOPp->w)))) 
-                                      | (((~ ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                              >> 3U)) 
-                                          & (~ ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                                >> 2U))) 
-                                         & (IData)(vlTOPp->w))) 
-                                     | (((~ ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                             >> 3U)) 
-                                         & (~ (IData)(vlTOPp->top__DOT__dut__DOT__State_wire))) 
-                                        & (IData)(vlTOPp->w))) 
-                                    | ((((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                         >> 2U) & ((IData)(vlTOPp->top__DOT__dut__DOT__State_wire) 
-                                                   >> 1U)) 
-                                       & (~ (IData)(vlTOPp->w))))));
-    } else {
-        vlTOPp->State_o = 0U;
+                                                       & (~ 
+                                                          ((IData)(vlTOPp->SW_i) 
+                                                           >> 1U))) 
+                                                      & (~ (IData)(vlTOPp->SW_i))) 
+                                                     << 1U) 
+                                                    | (0xfffffffeU 
+                                                       & ((((~ 
+                                                             ((IData)(vlTOPp->SW_i) 
+                                                              >> 2U)) 
+                                                            << 1U) 
+                                                           & (IData)(vlTOPp->SW_i)) 
+                                                          & ((IData)(vlTOPp->SW_i) 
+                                                             << 1U)))) 
+                                                   | (0x7ffffffeU 
+                                                      & ((((IData)(vlTOPp->SW_i) 
+                                                           >> 1U) 
+                                                          & (IData)(vlTOPp->SW_i)) 
+                                                         & ((~ (IData)(vlTOPp->SW_i)) 
+                                                            << 1U))))));
+        vlTOPp->top__DOT__dut__DOT___L = ((6U & (IData)(vlTOPp->top__DOT__dut__DOT___L)) 
+                                          | (1U & (
+                                                   (((~ 
+                                                      ((IData)(vlTOPp->SW_i) 
+                                                       >> 2U)) 
+                                                     & ((IData)(vlTOPp->SW_i) 
+                                                        >> 1U)) 
+                                                    & (IData)(vlTOPp->SW_i)) 
+                                                   | (((IData)(vlTOPp->SW_i) 
+                                                       >> 2U) 
+                                                      & (~ (IData)(vlTOPp->SW_i))))));
     }
-    vlTOPp->top__DOT__dut__DOT__State_wire = vlTOPp->State_o;
+    if (vlTOPp->_KEY1) {
+        vlTOPp->top__DOT__dut__DOT___CODE = (7U & (IData)(vlTOPp->top__DOT__dut__DOT___CODE));
+        vlTOPp->top__DOT__dut__DOT___CODE = ((0xbU 
+                                              & (IData)(vlTOPp->top__DOT__dut__DOT___CODE)) 
+                                             | (4U 
+                                                & (((((~ 
+                                                       ((IData)(vlTOPp->SW_i) 
+                                                        >> 2U)) 
+                                                      << 2U) 
+                                                     & ((IData)(vlTOPp->SW_i) 
+                                                        << 1U)) 
+                                                    & ((~ (IData)(vlTOPp->SW_i)) 
+                                                       << 2U)) 
+                                                   | (((IData)(vlTOPp->SW_i) 
+                                                       & ((~ 
+                                                           ((IData)(vlTOPp->SW_i) 
+                                                            >> 1U)) 
+                                                          << 2U)) 
+                                                      & ((IData)(vlTOPp->SW_i) 
+                                                         << 2U)))));
+        vlTOPp->top__DOT__dut__DOT___CODE = ((0xdU 
+                                              & (IData)(vlTOPp->top__DOT__dut__DOT___CODE)) 
+                                             | (2U 
+                                                & (((((~ 
+                                                       ((IData)(vlTOPp->SW_i) 
+                                                        >> 2U)) 
+                                                      & (~ 
+                                                         ((IData)(vlTOPp->SW_i) 
+                                                          >> 1U))) 
+                                                     & (~ (IData)(vlTOPp->SW_i))) 
+                                                    << 1U) 
+                                                   | (0x7ffffffeU 
+                                                      & ((((IData)(vlTOPp->SW_i) 
+                                                           >> 1U) 
+                                                          & (IData)(vlTOPp->SW_i)) 
+                                                         & ((~ (IData)(vlTOPp->SW_i)) 
+                                                            << 1U))))));
+        vlTOPp->top__DOT__dut__DOT___CODE = ((0xeU 
+                                              & (IData)(vlTOPp->top__DOT__dut__DOT___CODE)) 
+                                             | (1U 
+                                                & (((~ 
+                                                     ((IData)(vlTOPp->SW_i) 
+                                                      >> 2U)) 
+                                                    & (IData)(vlTOPp->SW_i)) 
+                                                   | (((IData)(vlTOPp->SW_i) 
+                                                       >> 1U) 
+                                                      & (~ (IData)(vlTOPp->SW_i))))));
+    }
+    vlTOPp->_L_o = vlTOPp->top__DOT__dut__DOT___L;
+    vlTOPp->_CODE_o = vlTOPp->top__DOT__dut__DOT___CODE;
 }
 
 void Vtop::_eval(Vtop__Syms* __restrict vlSymsp) {
@@ -205,11 +210,11 @@ VL_INLINE_OPT QData Vtop::_change_request_1(Vtop__Syms* __restrict vlSymsp) {
 void Vtop::_eval_debug_assertions() {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop::_eval_debug_assertions\n"); );
     // Body
+    if (VL_UNLIKELY((SW_i & 0xf8U))) {
+        Verilated::overWidthError("SW_i");}
+    if (VL_UNLIKELY((_KEY1 & 0xfeU))) {
+        Verilated::overWidthError("_KEY1");}
     if (VL_UNLIKELY((clk_i & 0xfeU))) {
         Verilated::overWidthError("clk_i");}
-    if (VL_UNLIKELY((w & 0xfeU))) {
-        Verilated::overWidthError("w");}
-    if (VL_UNLIKELY((res_ni & 0xfeU))) {
-        Verilated::overWidthError("res_ni");}
 }
 #endif  // VL_DEBUG

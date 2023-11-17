@@ -22,11 +22,8 @@ void Vtop::traceChgSub0(void* userp, VerilatedFst* tracep) {
     if (false && oldp) {}  // Prevent unused
     // Body
     {
-        tracep->chgBit(oldp+0,(vlTOPp->clk_i));
-        tracep->chgBit(oldp+1,(vlTOPp->w));
-        tracep->chgBit(oldp+2,(vlTOPp->res_ni));
-        tracep->chgBit(oldp+3,(vlTOPp->z_o));
-        tracep->chgCData(oldp+4,(vlTOPp->State_o),4);
+        tracep->chgCData(oldp+0,(vlTOPp->SW_i),3);
+        tracep->chgBit(oldp+1,(vlTOPp->clk_i));
     }
 }
 

@@ -32,7 +32,8 @@ void Vtop::_settle__TOP__2(Vtop__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop::_settle__TOP__2\n"); );
     Vtop* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    vlTOPp->top__DOT__dut__DOT__State_wire = vlTOPp->State_o;
+    vlTOPp->_CODE_o = vlTOPp->top__DOT__dut__DOT___CODE;
+    vlTOPp->_L_o = vlTOPp->top__DOT__dut__DOT___L;
 }
 
 void Vtop::_eval_initial(Vtop__Syms* __restrict vlSymsp) {
@@ -59,12 +60,13 @@ void Vtop::_eval_settle(Vtop__Syms* __restrict vlSymsp) {
 void Vtop::_ctor_var_reset() {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop::_ctor_var_reset\n"); );
     // Body
+    SW_i = VL_RAND_RESET_I(3);
+    _KEY1 = VL_RAND_RESET_I(1);
     clk_i = VL_RAND_RESET_I(1);
-    w = VL_RAND_RESET_I(1);
-    res_ni = VL_RAND_RESET_I(1);
-    z_o = VL_RAND_RESET_I(1);
-    State_o = VL_RAND_RESET_I(4);
-    top__DOT__dut__DOT__State_wire = VL_RAND_RESET_I(4);
+    _CODE_o = VL_RAND_RESET_I(4);
+    _L_o = VL_RAND_RESET_I(3);
+    top__DOT__dut__DOT___CODE = VL_RAND_RESET_I(4);
+    top__DOT__dut__DOT___L = VL_RAND_RESET_I(3);
     { int __Vi0=0; for (; __Vi0<1; ++__Vi0) {
             __Vm_traceActivity[__Vi0] = VL_RAND_RESET_I(1);
     }}

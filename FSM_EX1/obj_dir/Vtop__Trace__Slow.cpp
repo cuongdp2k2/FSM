@@ -44,22 +44,12 @@ void Vtop::traceInitSub0(void* userp, VerilatedFst* tracep) {
     if (false && tracep && c) {}  // Prevent unused
     // Body
     {
-        tracep->declBit(c+1,"clk_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-        tracep->declBit(c+2,"w",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-        tracep->declBit(c+3,"res_ni",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-        tracep->declBit(c+4,"z_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-        tracep->declBus(c+5,"State_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 3,0);
-        tracep->declBit(c+1,"top clk_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-        tracep->declBit(c+2,"top w",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-        tracep->declBit(c+3,"top res_ni",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-        tracep->declBit(c+4,"top z_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-        tracep->declBus(c+5,"top State_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 3,0);
-        tracep->declBit(c+1,"top dut clk_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-        tracep->declBit(c+2,"top dut w",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-        tracep->declBit(c+3,"top dut res_ni",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-        tracep->declBit(c+4,"top dut z_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-        tracep->declBus(c+5,"top dut State_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 3,0);
-        tracep->declBus(c+5,"top dut State_wire",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 3,0);
+        tracep->declBus(c+1,"SW_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 2,0);
+        tracep->declBit(c+2,"clk_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+        tracep->declBus(c+1,"top SW_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 2,0);
+        tracep->declBit(c+2,"top clk_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+        tracep->declBus(c+1,"top dut SW_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 2,0);
+        tracep->declBit(c+2,"top dut clk_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     }
 }
 
@@ -88,10 +78,7 @@ void Vtop::traceFullSub0(void* userp, VerilatedFst* tracep) {
     if (false && oldp) {}  // Prevent unused
     // Body
     {
-        tracep->fullBit(oldp+1,(vlTOPp->clk_i));
-        tracep->fullBit(oldp+2,(vlTOPp->w));
-        tracep->fullBit(oldp+3,(vlTOPp->res_ni));
-        tracep->fullBit(oldp+4,(vlTOPp->z_o));
-        tracep->fullCData(oldp+5,(vlTOPp->State_o),4);
+        tracep->fullCData(oldp+1,(vlTOPp->SW_i),3);
+        tracep->fullBit(oldp+2,(vlTOPp->clk_i));
     }
 }
