@@ -7,8 +7,10 @@ module Morse_Machine(
 
     // output
     output logic [2:0] LEDR    ,
-    output logic [2:0] LEDG    
+    output logic [3:0] LEDG    
 );
+
+    assign LEDG[3] = KEY[0] ;
 
     // Wire Declearation
     logic [3:0] MorseCharacter_wire ;

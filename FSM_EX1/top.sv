@@ -1,15 +1,19 @@
 module top (
-    // input
-    input logic [2:0] SW_i  ,
-    input logic       _KEY1 ,
-    input logic       clk_i ,
+    // input 
+    input logic      clk_i ,
+    input logic [2:0] SW       ,
+    input logic [3:0] KEY      ,
+
     // output
-    //output logic _LEDR , _LEDG  , 
-    output logic [3:0] _CODE_o    ,
-    output logic [2:0] _L_o       
+    output logic [2:0] LEDR    ,
+    output logic [3:0] LEDG     
 );
-	ex5 dut(
-		.*
-	);
+	Morse_Machine dut(
+    .CLOCK_50 (clk_i) ,
+    .SW  (SW)     ,
+    .KEY (KEY)     ,
+    .LEDR (LEDR)   ,
+    .LEDG (LEDG)    
+);
 	 
 endmodule : top

@@ -25,20 +25,36 @@ VL_MODULE(Vtop) {
     // The application code writes and reads these signals to
     // propagate new values into/out from the Verilated model.
     VL_IN8(clk_i,0,0);
-    VL_IN8(SW_i,2,0);
-    VL_IN8(_KEY1,0,0);
-    VL_OUT8(_CODE_o,3,0);
-    VL_OUT8(_L_o,2,0);
+    VL_IN8(SW,2,0);
+    VL_IN8(KEY,3,0);
+    VL_OUT8(LEDR,2,0);
+    VL_OUT8(LEDG,3,0);
     
     // LOCAL SIGNALS
     // Internals; generally not touched by application code
-    CData/*3:0*/ top__DOT__dut__DOT___CODE;
-    CData/*2:0*/ top__DOT__dut__DOT___L;
+    CData/*0:0*/ top__DOT__dut__DOT__timeCounter_wire;
+    CData/*3:0*/ top__DOT__dut__DOT__CODE_GENERATER__DOT___CODE;
+    CData/*2:0*/ top__DOT__dut__DOT__CODE_GENERATER__DOT___L;
+    CData/*3:0*/ top__DOT__dut__DOT__FSM__DOT__MorseCharacter_wire;
+    CData/*2:0*/ top__DOT__dut__DOT__FSM__DOT__MorseLength_wire;
+    CData/*3:0*/ top__DOT__dut__DOT__FSM__DOT__MorseCharacter_reg;
+    CData/*2:0*/ top__DOT__dut__DOT__FSM__DOT__MorseLength_reg;
+    CData/*0:0*/ top__DOT__dut__DOT__FSM__DOT__sysProcessing_Flag;
+    CData/*3:0*/ top__DOT__dut__DOT__FSM__DOT__codeShift_reg;
+    CData/*2:0*/ top__DOT__dut__DOT__FSM__DOT__lengthCounter_reg;
+    IData/*31:0*/ top__DOT__dut__DOT__timeCounter__DOT__timeCounter_reg;
+    IData/*31:0*/ top__DOT__dut__DOT__timeCounter__DOT__timeCounter_wire;
     
     // LOCAL VARIABLES
     // Internals; generally not touched by application code
+    CData/*0:0*/ top__DOT__dut__DOT____Vcellinp__CODE_GENERATER___KEY_i;
+    CData/*0:0*/ top__DOT__dut__DOT____Vcellout__FSM__doneLed_o;
+    CData/*0:0*/ top__DOT__dut__DOT____Vcellout__FSM__dashLed_o;
+    CData/*0:0*/ top__DOT__dut__DOT____Vcellout__FSM__dotLed_o;
     CData/*0:0*/ __Vclklast__TOP__clk_i;
-    CData/*0:0*/ __Vm_traceActivity[1];
+    CData/*0:0*/ __Vclklast__TOP__top__DOT__dut__DOT____Vcellinp__CODE_GENERATER___KEY_i;
+    CData/*0:0*/ __Vclklast__TOP__top__DOT__dut__DOT__timeCounter_wire;
+    CData/*0:0*/ __Vm_traceActivity[4];
     
     // INTERNAL VARIABLES
     // Internals; generally not touched by application code
@@ -76,6 +92,9 @@ VL_MODULE(Vtop) {
   private:
     static QData _change_request(Vtop__Syms* __restrict vlSymsp);
     static QData _change_request_1(Vtop__Syms* __restrict vlSymsp);
+  public:
+    static void _combo__TOP__1(Vtop__Syms* __restrict vlSymsp);
+  private:
     void _ctor_var_reset() VL_ATTR_COLD;
   public:
     static void _eval(Vtop__Syms* __restrict vlSymsp);
@@ -86,7 +105,10 @@ VL_MODULE(Vtop) {
   public:
     static void _eval_initial(Vtop__Syms* __restrict vlSymsp) VL_ATTR_COLD;
     static void _eval_settle(Vtop__Syms* __restrict vlSymsp) VL_ATTR_COLD;
-    static void _sequent__TOP__1(Vtop__Syms* __restrict vlSymsp);
+    static void _multiclk__TOP__6(Vtop__Syms* __restrict vlSymsp);
+    static void _sequent__TOP__3(Vtop__Syms* __restrict vlSymsp);
+    static void _sequent__TOP__4(Vtop__Syms* __restrict vlSymsp);
+    static void _sequent__TOP__5(Vtop__Syms* __restrict vlSymsp);
     static void _settle__TOP__2(Vtop__Syms* __restrict vlSymsp) VL_ATTR_COLD;
   private:
     static void traceChgSub0(void* userp, VerilatedFst* tracep);
