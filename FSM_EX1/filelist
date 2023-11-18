@@ -1,1 +1,4 @@
+./src5/HalfSec_Counter.sv
+./src5/Morse_FSM.sv
 ./src5/Morse_LetterDecoder.sv
+./src5/Morse_Machine.sv
