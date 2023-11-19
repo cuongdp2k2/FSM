@@ -8,6 +8,7 @@ module Morse_FSM (
     // output
     output reg        dotLed_o         ,
     output reg        dashLed_o        ,
+    output reg        processLed_o     ,
     output reg        doneLed_o        
 ) ;
     logic [3:0] MorseCharacter_wire ;
@@ -21,8 +22,11 @@ module Morse_FSM (
 
     assign MorseCharacter_wire = (sysProcessing_Flag) ? codeShift_reg : MorseCharacter_reg  ;
     assign MorseLength_wire    = (sysProcessing_Flag) ? lengthCounter_reg : MorseLength_reg ;
+    assign processLed_o        = sysProcessing_Flag  ;
+    assign sysProcessing_Flag  = (lengthCounter_reg != 0) ;
+    assign doneLed_o           = ~sysProcessing_Flag      ;
 
-    always @( posedge pushButton_i ) begin : Store_New_Data
+    always @( negedge pushButton_i ) begin : Store_New_Data
         MorseCharacter_reg <= MorseCharacter_i ;
         MorseLength_reg    <= MorseLength_i    ;
     end
@@ -30,8 +34,7 @@ module Morse_FSM (
     always @( posedge timeCounter_i ) begin : Process_output
         dotLed_o           <= ~MorseCharacter_wire[0]  ;
         dashLed_o          <= MorseCharacter_wire[0]   ;
-        doneLed_o          <= ~sysProcessing_Flag      ;
-        sysProcessing_Flag <= (lengthCounter_reg != 0) ;
+        
         codeShift_reg      <= MorseCharacter_wire >> 1 ;
         lengthCounter_reg  <= MorseLength_wire - 1     ; 
     end

@@ -5,14 +5,9 @@ module HalfSec_Counter(
     output logic timeCounter_o 
 ) ;
     reg [31:0] timeCounter_reg ;
-    logic [31:0] timeCounter_wire ;
-
-    assign timeCounter_wire = timeCounter_reg  + 1 ;
-
-    assign timeCounter_o = (timeCounter_reg == 32'd25000000) ;
-
-    always @( posedge CLOCK50_i ) begin
-        timeCounter_reg <= (timeCounter_wire == 32'd25000000) ? 0 : timeCounter_wire ;
+    always @(posedge CLOCK50_i) begin
+        timeCounter_reg <= (timeCounter_reg == 25000000) ? 0 : timeCounter_reg + 1;
+        timeCounter_o   <= (timeCounter_reg > 12500000) & (timeCounter_reg < 25000000) ;
     end
 
 endmodule : HalfSec_Counter

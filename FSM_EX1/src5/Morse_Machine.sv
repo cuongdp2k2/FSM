@@ -7,10 +7,12 @@ module Morse_Machine(
 
     // output
     output logic [2:0] LEDR    ,
-    output logic [3:0] LEDG    
+    output logic [7:0] LEDG    
 );
 
     assign LEDG[3] = KEY[0] ;
+    assign LEDG[2] = timeCounter_wire ;
+    assign LEDG[5:4] = 0 ;
 
     // Wire Declearation
     logic [3:0] MorseCharacter_wire ;
@@ -35,8 +37,9 @@ module Morse_Machine(
         .pushButton_i     (KEY[0]) ,
         
         // output
-        .dotLed_o         (LEDG[2]) ,
-        .dashLed_o        (LEDG[1]) ,
+        .dotLed_o         (LEDG[7]) ,
+        .dashLed_o        (LEDG[6]) ,
+        .processLed_o     (LEDG[1]) ,
         .doneLed_o        (LEDG[0]) 
     ) ;
 
